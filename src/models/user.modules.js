@@ -50,7 +50,7 @@ const userSchema = new Schema(
   { timestamps: true },
 );
 
-// 🔐 Password comparison method
+// Password comparison method
 userSchema.methods.isPasswordMatch = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
